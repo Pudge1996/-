@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No.1 - 制作一个简单的菜单动画效果</title>
+<style type="text/css">
+
+	body{
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
+
+	.content{
+		text-align: center;
+	}
+
+
+	/*文字的属性和动画*/
+	.title{
+		display: inline-block;
+		margin: auto;
+		margin-bottom: 8px;
+		animation-name: title1;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes title2{
+		0% { color: black; }
+		100% { color: #1da1f2; }
+	}
+
+	@keyframes title1{
+		0% { color: #1da1f2 ; }
+		100% { color: black; }
+	}
+
+	/*指示器的属性和动画*/
+	.indicator{
+		width: 0px;
+		height: 4px;
+		margin: auto;
+		margin-bottom: 20px;
+		background-color: #1da1f2;
+		animation-name: indicator1;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes indicator2{
+		0% { width: 0px; }
+		100% { width: 72px; }
+	}
+	@keyframes indicator1{
+			0% { width: 72px; }
+			100% { width: 0px; }
+	}
+
+	#Switch{
+		visibility: hidden;
+		}
+</style>
+
+</head>
+<body>
+<div class="content">
+	<div class="title" id="title" >前端学院</div>
+	<div class="indicator" id="indicator"></div>
+	<div class="btn">
+		<button id="btnid" onclick="myFc()">切换样式</button>
+	</div>
+	<div id="Switch">A</div>
+
+</div>
+</body>
+
+
+<script>
+	
+
+	function myFc()												
+	{	
+	var x = document.getElementById('title');		
+	var y = document.getElementById('Switch');
+	var z = document.getElementById('indicator');
+
+		if (y.innerHTML == "A") 	// 如果 Switch 的值为 "A"，则执行
+		{
+			// Title 动画
+			x.style.animationName = "title2";			
+			x.style.animationDuration = "0.5s";			
+			x.style.animationFillMode = "forwards";	
+			x.style.animationTimeFunction = "ease";	
+
+			// Indicator 动画
+			z.style.animationName = "indicator2";		
+			z.style.animationDuration = "0.5s";		
+			z.style.animationFillMode = "forwards";	
+			z.style.animationTimeFunction = "ease";	
+
+			// 改变 Switch 的值为 "B"
+			document.getElementById('Switch').innerHTML="B";	
+		}
+		else 	// 如果 Switch 的值不为 "A"，则执行
+		{
+			// Title 动画
+			x.style.animationName = "title1";			
+			x.style.animationDuration = "0.5s";			
+			x.style.animationFillMode = "forwards"	
+			x.style.animationTimeFunction = "ease";	
+
+			// Indicator 动画
+			z.style.animationName = "indicator1";		
+			z.style.animationDuration = "0.5s";		
+			z.style.animationFillMode = "forwards";	
+			z.style.animationTimeFunction = "ease";	
+
+			// 改变 Switch 的值为 "A"
+			document.getElementById("Switch").innerHTML="A";		
+		}
+	}
+	
+</script>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
