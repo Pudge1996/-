@@ -4,6 +4,7 @@
 	<title>No.1 - 制作一个简单的菜单动画效果</title>
 <style type="text/css">
 
+
 	body{
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
     Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -19,13 +20,25 @@
 		display: inline-block;
 		margin: auto;
 		margin-bottom: 8px;
-		animation-name: title1;
-		animation-fill-mode: forwards;
+		-webkit-animation-name: title1;
+		        animation-name: title1;
+		-webkit-animation-fill-mode: forwards;
+		        animation-fill-mode: forwards;
+	}
+
+	@-webkit-keyframes title2{
+		0% { color: black; }
+		100% { color: #1da1f2; }
 	}
 
 	@keyframes title2{
 		0% { color: black; }
 		100% { color: #1da1f2; }
+	}
+
+	@-webkit-keyframes title1{
+		0% { color: #1da1f2 ; }
+		100% { color: black; }
 	}
 
 	@keyframes title1{
@@ -40,13 +53,24 @@
 		margin: auto;
 		margin-bottom: 20px;
 		background-color: #1da1f2;
-		animation-name: indicator1;
-		animation-fill-mode: forwards;
+		-webkit-animation-name: indicator1;
+		        animation-name: indicator1;
+		-webkit-animation-fill-mode: forwards;
+		        animation-fill-mode: forwards;
+	}
+
+	@-webkit-keyframes indicator2{
+		0% { width: 0px; }
+		100% { width: 72px; }
 	}
 
 	@keyframes indicator2{
 		0% { width: 0px; }
 		100% { width: 72px; }
+	}
+	@-webkit-keyframes indicator1{
+			0% { width: 72px; }
+			100% { width: 0px; }
 	}
 	@keyframes indicator1{
 			0% { width: 72px; }

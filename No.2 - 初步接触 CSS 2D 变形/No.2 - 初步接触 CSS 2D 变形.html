@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No.2 - 初步接触 CSS 2D 变形</title>
+<style type="text/css">
+
+	.content{
+		display: block;
+		text-align: center;
+		margin-top: 40px;
+	}
+
+	.box0{
+		width: 60px;
+		height: 68px;
+		background-color: #f7f6f6;
+		border: 2px solid #ebebeb;
+		margin: auto;
+		
+	}
+
+	.box1{
+		width: 60px;
+		height: 68px;
+		background-color: #f7f6f6;
+		border: 2px solid #ebebeb;
+		margin: auto;
+		transform: skewX(30deg);
+	}
+
+	.box2{
+		width: 60px;
+		height: 68px;
+		background-color: #f7f6f6;
+		border: 2px solid #ebebeb;
+		margin: auto;
+		transform: scale(1, 0.5);
+	}
+
+	.box3{
+		width: 60px;
+		height: 68px;
+		background-color: #f7f6f6;
+		border: 2px solid #ebebeb;
+		margin: auto;
+		transform: rotate(45deg);
+	}
+
+	.box4{
+		width: 60px;
+		height: 68px;
+		background-color: #f7f6f6;
+		border: 2px solid #ebebeb;
+		margin: auto;
+		transform: translate(10px,20px);
+	}
+
+	.box5{
+		width: 60px;
+		height: 68px;
+		background-color: #f7f6f6;
+		border: 2px solid #ebebeb;
+		margin: auto;
+		transform: matrix(0.7,0.7,-0.151,0.55,10,20);
+	}
+	
+	.text{
+		text-align: center;
+		line-height: 68px;
+		}
+
+	.btn{
+		margin-top: 20px;
+	}
+
+	.cssname{
+		margin-top: 40px;
+	}
+
+</style>
+
+</head>
+<body>
+	<div class="content">
+		<div id="box" class="box0">
+				<div id="text" class="text"></div>
+		</div>
+		<div id="cssname" class="cssname">default</div>
+		<button id="btn" class="btn" onclick="myFunction()">Switch</button>
+		
+	</div>
+</body>
+	
+
+<script type="text/javascript">
+	
+	var box = document.getElementById("box");
+	var btn = document.getElementById('btn');
+	var cssname = document.getElementById('cssname');
+	function myFunction(){
+
+	if (box.className == "box0")
+	{
+		box.className = "box1"
+		btn.innerHTML = "Switch";
+		cssname.innerHTML = "transform: skewX(30deg)";
+	}
+
+	else if (box.className == "box1")
+	{
+		box.className = "box2";
+		cssname.innerHTML="transform: scale(1, 0.5)";
+	}
+	else if (box.className == "box2") 
+	{
+		box.className = "box3";
+		cssname.innerHTML = "transform: rotate(45deg)";
+	}
+	else if (box.className == "box3") 
+	{
+		box.className = "box4";
+		cssname.innerHTML = "transform: translate(10px,20px)";
+	}
+	else if (box.className == "box4") 
+	{
+		box.className = "box5";
+		btn.innerHTML = "Reset";
+		cssname.innerHTML = "transform: matrix(0.7,0.7,-0.151,0.55,10,20)";
+	}
+	else
+	{
+		box.className = "box0";
+		btn.innerHTML = "Switch";
+		cssname.innerHTML = "default";
+	}
+	}
+	
+</script>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
