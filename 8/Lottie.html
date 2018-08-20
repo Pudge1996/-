@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#bm{
+			margin: 0 auto;
+			width: 800px;
+			height: 300px;
+			background-color: #102131;
+		}
+	</style>
+</head>
+<body>
+	<div id="bm"></div>
+	<!-- scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"></script>
+	<script>
+		var animation = bodymovin.loadAnimation({
+	  container: document.getElementById('bm'), // Required
+	  path: 'test.json', // Required
+	  renderer: 'svg', // Required
+	  loop: true, // Optional
+	  autoplay: true, // Optional
+	})
+
+	</script>
+</body>
+</html>

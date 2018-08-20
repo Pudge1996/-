@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No.6 - 利用 CSS animation 制作一个炫酷的 Slider</title>
+	<style type="text/css">
+    body{
+        margin: 0;
+    }
+    .image{
+        width: 800px;
+        height: 560px;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .box1{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        position: absolute;
+        left: 350px;
+        top: 460px;
+        z-index: 99;
+    }
+    .box2{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        position: absolute;
+        left: 450px;
+        top: 460px;
+        z-index: 99;
+    }
+
+    .box3{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        position: absolute;
+        left: 550px;
+        top: 460px;
+        z-index: 99;
+    }
+
+    .box4{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        position: absolute;
+        left: 650px;
+        top: 460px;
+        z-index: 99;
+    }
+
+    .box5{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        position: absolute;
+        left: 750px;
+        top: 460px;
+        z-index: 99;
+    }
+
+    .catA{
+        /*height: 100%;*/
+        left: 0%;
+        position: absolute;
+    }
+
+    .catB{
+        width: 100%;
+        /*height: 100%;*/
+        position: absolute;
+        float: left;
+        left: -100%;
+        animation: catBin 2s ease-out forwards ;
+        animation-play-state: paused;
+        
+    }
+    
+    .catC{
+        width: 100%;
+        float: left;
+        top: 0px;
+        left: 0px;
+        transform: translateY(600px);
+        animation: catCin 2s ease-out forwards;
+        animation-play-state: paused;
+    }
+
+    .catD{
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transform: scale(0);
+        animation: catDin 2s ease-in forwards;
+        animation-play-state: paused;
+    }
+    
+    .catE{
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transform: scale(2);
+        transform-origin: 50% 50%;
+        animation: catEin 2s ease-out forwards;
+        animation-play-state: paused;
+        opacity: 0;
+    }
+
+    .catF{
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transform: rotateZ(-180deg) scale(0);
+        transform-origin: 50% 50%;
+        animation: catFin 2s ease-in-out forwards;
+        animation-play-state: paused;
+    }
+
+    @keyframes catBin{
+        from{ left: -100%; }
+        to{ left: 0%; }
+    }
+
+    @keyframes catCin{
+
+        to{ transform: translateY(0px); }
+    }
+
+    @keyframes catDin{
+        to{ transform: scale(1); }
+    }
+
+    @keyframes catEin{
+        to{ transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes catFin{
+        to{ transform: rotateZ(0deg) scale(1); }
+    }
+	</style>
+</head>
+<body>
+    <div class="box">
+            <div class="box1" onclick="catBin()"></div>
+            <div class="box2" onclick="catCin()"></div>
+            <div class="box3" onclick="catDin()"></div>
+            <div class="box4" onclick="catEin()"></div>
+            <div class="box5" onclick="catFin()"></div>
+        </div>
+    <div id="image" class="image">
+        
+    
+        <div ><img id="catA" class="catA"  src="https://r.hswstatic.com/w_907/gif/tesla-cat.jpg"></div>
+        <div><img id="catB" class="catB" src="https://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg"></div>
+        <div><img id="catC" class="catC" src="http://5b0988e595225.cdn.sohucs.com/images/20170914/8b7453e9483d489e8db2fe593a15e7c3.png"></div>
+        <div><img id="catD" class="catD" src="http://img.mp.itc.cn/upload/20170304/de1b293c69da46c0b13b6db7fa4c897d_th.jpg"></div>
+        <div><img id="catE" class="catE" src="http://www.kepu.net.cn/gb/ydrhcz/ydrhcz_wap/ydrhcz_wap_zpzs/201802/W020180206556963309780.png"></div>
+        
+        <div><img id="catF" class="catF" src="http://pic1.win4000.com/wallpaper/b/53d61c80b5a7c.jpg"></div>
+
+        </div>
+</body>
+<script>
+    var aPS = animationPlayState;
+    function catBin(){
+        document.getElementById("catB").style.animationPlayState = "running";
+
+    }
+
+    function catCin(){
+        document.getElementById("catC").style.animationPlayState = "running";
+    }
+
+    function catDin(){
+        document.getElementById("catD").style.animationPlayState = "running";
+    }
+
+    function catEin(){
+        document.getElementById("catE").style.animationPlayState = "running";
+    }
+
+    function catFin(){
+        document.getElementById("catF").style.animationPlayState = "running";
+    }
+</script>
+</html>
